@@ -4,7 +4,7 @@
 The [British Informatics Olympiad](https://olympiad.org.uk) is "the national computing competition for
 schools and colleges".
 
-This repository contains write-ups for many of the problems. It particularly focusses on the Round 1 problems. I typically will not include a write-up if I did not solve the problem completely by myself; instead I will try to link to any resources I found helpful.
+This repository contains write-ups for many of the problems. It particularly focuses on the Round 1 problems. I typically will not include a write-up if I did not solve the problem completely by myself; instead I will try to link to any resources I found helpful.
 
 I've written all of my Round 1 answers in Python.
 
