@@ -81,7 +81,7 @@ Notice that we add 1 to `distance`, because `distance` is the distance to the pa
 
 Our final code is hence
 
-```
+```python
 def get_children(parent):
   return [parent * 2, parent // 2, parent + 1, parent - 1]
 
@@ -121,7 +121,7 @@ Indeed, this outputs 2 (which is correct, (÷ 2), (+ 1)).
 
 This code could be improved by detecting when it is not possible to get from the parent to the `origin_node` to the `target_node`. If `layer` becomes empty (because all possible children are in `seen`), we know we have explored all of the layers. We could detect this by changing the while loop so that it starts
 
-```
+```python
 while layer:
 ```
 
