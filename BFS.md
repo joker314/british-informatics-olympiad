@@ -52,11 +52,14 @@ Next, we can try to build the next layer. As soon as we generate a child, we sho
 
 Also, it's probably a good idea to exit out of the loop as soon as we realise we've found our target. If we ran the check at the top of our `while` loop, we would generate the entire layer even if we found the target half-way through.
 
-The BFS implementation will probably have lots of nested loops, so I like to wrap it in a function so that I can `return` in order to break out of all of them at once. This does mean we need to list any global variables that we plan on changing.
+The BFS implementation will probably have lots of nested loops, so I like to wrap it in a function so that I can `return` in order to break out of all of them at once.
 
 ```python
 def bfs():
-  global seen, layer, distance
+  layer = [origin_node]
+  seen = set(layer)
+
+  distance = 0
   
   if target_node == origin_node:
     return 0
@@ -79,6 +82,9 @@ def bfs():
 
 Notice that we add 1 to `distance`, because `distance` is the distance to the parent, not the child.
 
+By wrapping our code in a function, it makes it hard to inspect the variables -- which can be a pain for debugging. It might be a good idea to have the first line of the function be `global layer, seen, distance` etc., so that you can type them into the interactive Python shell if your program provides an unexpected output.
+
+
 Our final code is hence
 
 ```python
@@ -88,13 +94,10 @@ def get_children(parent):
 origin_node = 12
 target_node = 7
 
-layer = [origin_node]
-seen = set(layer)
-
-distance = 0
-
 def bfs():
-  global seen, layer, distance
+  layer = [origin_node]
+  seen = set(layer)
+  distance = 0
   
   if target_node == origin_node:
     return 0
